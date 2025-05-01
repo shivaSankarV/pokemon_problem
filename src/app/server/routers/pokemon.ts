@@ -1,6 +1,6 @@
 import { z } from "zod";
-import { router, publicProcedure } from "../trpc";
-import { prisma } from "@/utils/db";
+import { router, publicProcedure } from "../../utils/trpc";
+import { prisma } from "@/app/utils/db";
 
 // Define a type for Pokemon data
 type PokemonData = {

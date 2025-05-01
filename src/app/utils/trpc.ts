@@ -1,3 +1,5 @@
+import { createTRPCReact } from "@trpc/react-query";
+import type { AppRouter } from "@/app/server/routers/_app";
 import { initTRPC } from "@trpc/server";
 import superjson from "superjson";
 import { ZodError } from "zod";
@@ -16,5 +18,6 @@ const t = initTRPC.create({
   },
 });
 
+export const trpc = createTRPCReact<AppRouter>();
 export const router = t.router;
 export const publicProcedure = t.procedure;

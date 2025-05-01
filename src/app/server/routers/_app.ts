@@ -1,4 +1,4 @@
-import { router } from "../trpc";
+import { router } from "../../utils/trpc";
 import { pokemonRouter } from "./pokemon";
 
 export const appRouter = router({
