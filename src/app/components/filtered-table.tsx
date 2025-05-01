@@ -4,9 +4,10 @@ import type React from "react";
 
 import { useState } from "react";
 import { Box, Paper, Typography } from "@mui/material";
-// import { PokemonTypeSelection } from "./pokemon-type-selection"
-// import { PokedexTable } from "./pokedex-table"
+
 import { trpc } from "../utils/trpc";
+import { PokemonTypeSelection } from "./type-selection";
+import { PokedexTable } from "./pokedex-table";
 
 export const FilterablePokedexTable: React.FC = () => {
   const [selectedType, setSelectedType] = useState<string | undefined>(
@@ -29,9 +30,16 @@ export const FilterablePokedexTable: React.FC = () => {
           Filterable Pokedex
         </Typography>
 
-        {/* <PokemonTypeSelection selectedType={selectedType} selectType={setSelectedType} />
+        <PokemonTypeSelection
+          selectedType={selectedType}
+          selectType={setSelectedType}
+        />
 
-        <PokedexTable pokemon={pokemon} isLoading={isLoading} error={error instanceof Error ? error : null} /> */}
+        <PokedexTable
+          pokemon={pokemon}
+          isLoading={isLoading}
+          error={error instanceof Error ? error : null}
+        />
       </Paper>
     </Box>
   );
