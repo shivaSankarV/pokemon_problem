@@ -52,7 +52,7 @@ export default function Home() {
     <Container maxWidth="md">
       <Box sx={{ my: 4 }}>
         <Typography variant="h4" component="h1" gutterBottom align="center">
-          Pokedex
+          Pokedex - Single Pokemon Search
         </Typography>
 
         <Box sx={{ display: "flex", justifyContent: "center", gap: 2, mb: 4 }}>
