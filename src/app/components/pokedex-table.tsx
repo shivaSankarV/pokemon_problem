@@ -46,19 +46,22 @@ export const PokedexTable: React.FC<PokedexTableProps> = ({
   if (!pokemon || pokemon.length === 0) {
     return (
       <Box sx={{ p: 2 }}>
-        <Typography>No Pokémon found.</Typography>
+        <Typography>No Pokemon found.</Typography>
       </Box>
     );
   }
 
   return (
     <TableContainer component={Paper} sx={{ mt: 2 }}>
-      <Table sx={{ minWidth: 650 }} aria-label="pokemon table">
+      <Table
+        sx={{ minWidth: 650, columnGap: "10px" }}
+        aria-label="pokemon table"
+      >
         <TableHead>
           <TableRow>
-            <TableCell>ID</TableCell>
-            <TableCell>Pokémon</TableCell>
-            <TableCell>Types</TableCell>
+            <TableCell align="center">Name</TableCell>
+            <TableCell align="center">Pokemon</TableCell>
+            <TableCell align="center">Types</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

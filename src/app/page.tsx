@@ -19,6 +19,8 @@ import {
   Typography,
 } from "@mui/material";
 import Link from "next/link";
+
+import { PokemonRow } from "./components/pokemon-row";
 import { trpc } from "./utils/trpc";
 
 export default function Home() {
@@ -102,12 +104,12 @@ export default function Home() {
 
         {isLoading && <Typography align="center">Loading...</Typography>}
 
-        {/* {pokemon && (
+        {pokemon && (
           <TableContainer component={Paper}>
             <Table>
               <TableHead>
                 <TableRow>
-                  <TableCell>ID</TableCell>
+                  <TableCell>Name</TableCell>
                   <TableCell>Pokémon</TableCell>
                   <TableCell>Types</TableCell>
                 </TableRow>
@@ -117,7 +119,7 @@ export default function Home() {
               </TableBody>
             </Table>
           </TableContainer>
-        )} */}
+        )}
 
         <Snackbar
           open={!!error}

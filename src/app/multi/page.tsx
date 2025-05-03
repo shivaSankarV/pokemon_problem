@@ -15,7 +15,7 @@ import {
   Chip,
   Stack,
 } from "@mui/material";
-// import { PokedexTable } from "@/components/pokedex-table";
+import { PokedexTable } from "../components/pokedex-table";
 import Link from "next/link";
 import { trpc } from "../utils/trpc";
 
@@ -128,11 +128,11 @@ export default function MultiPokemonPage() {
           )}
         </Paper>
 
-        {/* <PokedexTable
+        <PokedexTable
           pokemon={pokemon}
           isLoading={isLoading}
-          error={isError ? new Error("Failed to fetch Pokémon") : null}
-        /> */}
+          error={isError ? new Error("Failed to fetch Pokemon") : null}
+        />
 
         <Snackbar
           open={!!error}

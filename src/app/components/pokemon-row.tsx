@@ -49,21 +49,34 @@ const typeColors: Record<string, string> = {
 export const PokemonRow: React.FC<PokemonRowProps> = ({ pokemon }) => {
   return (
     <TableRow hover>
-      <TableCell>
-        <Typography variant="body1">{pokemon.id}</Typography>
+      <TableCell align="center">
+        <Typography variant="body1">{pokemon.name}</Typography>
       </TableCell>
       <TableCell>
-        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-          <Avatar
-            src={pokemon.sprite}
-            alt={pokemon.name}
-            sx={{ width: 50, height: 50 }}
-          />
-          <Typography variant="body1">{pokemon.name}</Typography>
-        </Box>
+        <Avatar
+          src={pokemon.sprite}
+          alt={pokemon.name}
+          sx={{
+            width: 50,
+            height: 50,
+            objectFit: "contain",
+            justifySelf: "center",
+            transition: "transform 0.3s ease", // Smooth transition
+            "&:hover": {
+              transform: "scale(1.5)", // Increase size on hover
+            },
+          }}
+        />
       </TableCell>
       <TableCell>
-        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 1,
+            justifyContent: "center",
+          }}
+        >
           {pokemon.types.map((type) => (
             <Chip
               key={type}
